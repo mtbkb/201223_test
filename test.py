@@ -1,9 +1,14 @@
+import sys
+
+
 if __name__ == '__main__':
+    filename = sys.argv[1]
     keys = []
     values = []
-    with open("input.txt", mode='r') as f:
+    with open(filename, mode='r') as f:
         for line in f:
             i = line.find(':')
+            
             if i != -1:
                 keys.append(int(line[:i]))
                 values.append(line[i + 1:-1])
